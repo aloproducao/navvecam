@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<head>
+    <title>navve.cam</title>
+</head>
+<style type="text/css">
+  video {
+  
+  width: 65%;
+
+left: 50%;
+position: absolute;
+transform: translateX(-40%);
+  
+  }
+  #broadcasterName {
+  }
+
+    #roomNumber {
+ -webkit-appearance: none;
+  margin-top: 30px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  border-radius: 40px;
+  font-size: 14px;
+  border: 3px solid #00B8FF;
+  color: #00B8FF;
+  background: none;
+  height: 40px;
+  width: 500px;
+  margin: 0;
+  transition: 0.3s;
+  box-shadow: inset 0 0 0 none;
+   width: 40%;
+  }
+  ::-webkit-input-placeholder {
+  color: lightblue; 
+}
+
+    #name {
+        -webkit-appearance: none;
+  margin-top: 30px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  border-radius: 40px;
+  font-size: 14px;
+  border: 3px solid #00B8FF;
+  color: #00B8FF;
+  background: none;
+  height: 40px;
+  width: 500px;
+  margin: 0;
+  transition: 0.3s;
+  box-shadow: inset 0 0 0 none;
+  width: 40%;
+  }
+
+  body {
+  background: #20262E;
+  padding: 20px;
+  font-family: Helvetica;
+scaleToFit: "width";
+    centerStage: "horizontal";
+}
+
+
+#selectRoom {
+  color: white;
+}
+h1 {
+  color: white;
+}
+#banner-message {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  transition: all 0.2s;
+  margin: 0 auto;
+  width: 300px;
+}
+
+button {
+  background: #0084ff;
+  border: none;
+  border-radius: 9px;
+  margin:10px;
+  padding: 8px 39px;
+  font-size: 20px;
+  color: #fff;
+}
+
+#banner-message.alt {
+  background: #0084ff;
+  color: #fff;
+  margin-top: 40px;
+  width: 200px;
+}
+
+#banner-message.alt button {
+  background: #fff;
+  color: #000;
+}
+
+
+  </style> 
+<body>
+    <center>
+
+
+    <div id="selectRoom">
+        <label for="name">Nome </label>
+        <input id="name" value="sistema navve" type="text" />
+        <div> &nbsp; </div>
+      
+    
+        
+ <div class="select is-info is-3">
+ <label for="roomNumber">CANAL</label>
+            <select id="roomNumber" >
+              <!-- 
+            Lembrar de mudar os valores
+
+              -->
+              
+              
+              
+              <option value="chanel-1">Canal-1</option>
+              <option value="chanel-2">Canal-2</option>
+              <option value="chanel-3">Canal-3</option>
+              <option value="chanel-4">Canal-4</option>
+              <option value="chanel-5">Canal-5</option>
+              <option value="chanel-6">Canal-6</option>
+              <option value="chanel-7">Canal-7</option>
+              <option value="chanel-8">Canal-8</option>
+              <option value="chanel-9">Canal-9</option>
+              <option value="chanel-10">Canal-10</option>
+              <option value="chanel-11">Canal-11</option>
+              <option value="chanel-12">Canal-12</option>
+              
+            </select>
+          </div>
+
+
+
+
+
+       <div> <button id="joinViewer">Assistir</button> <button id="joinBroadcaster" style=" background: #cd1630;">Transmitir</button>     
+        </div>
+    </div>
+    </center>
+    <div id="consultingRoom" style="display:none">
+        <video id=video autoplay controls muted></video>
+       
+        <button onclick="iniciarPIP()">PiP</button>
+   <div>       
+     <button value="Refresh Page" onClick="window.location.href=window.location.href" style="background-color:red">Reiniciar</button>
+       </div>
+
+        <p id="broadcasterName" style=" color: white; "></p>
+        <ul id="viewers" style=" color: white;"></ul>
+    </div>
+
+<!--Faz pip no navegador, funciona bem para computadores 
+não roda em android ios não testado
+
+
+
+-->
+<script>
+async function iniciarPIP(){
+    const video = document.querySelector('#video');
+    await video.requestPictureInPicture();
+}
+
+</script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>

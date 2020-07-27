@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<head>
+    <title>navve.cam - mobile</title>
+</head>
+<style type="text/css">
+  video {
+  
+  width: 100%;
+
+left: 50%;
+position: absolute;
+transform: translateX(-50%);
+  
+  }
+  #broadcasterName {
+  }
+
+    #roomNumber {
+ -webkit-appearance: none;
+  margin-top: 10px;  
+  box-sizing: border-box;
+  padding-left: 10px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 3px solid #00B8FF;
+  color: #00B8FF;
+  background: none;
+  height: 40px;
+  width: 500px;
+  margin: 0;
+  transition: 0.3s;
+  box-shadow: inset 0 0 0 none;
+   width: 80%;
+  }
+  ::-webkit-input-placeholder {
+  color: lightblue; 
+}
+
+    #name {
+        -webkit-appearance: none;
+  margin-top: 30px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 3px solid #00B8FF;
+  color: #00B8FF;
+  background: none;
+  height: 40px;
+  width: 500px;
+  margin: 0;
+  transition: 0.3s;
+  box-shadow: inset 0 0 0 none;
+  width: 80%;
+  }
+
+  body {
+  background: #20262E;
+  padding: 20px;
+  font-family: Helvetica;
+
+}
+
+
+#selectRoom {
+  color: white;
+}
+h1 {
+  color: white;
+}
+#banner-message {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  transition: all 0.2s;
+  margin: 0 auto;
+  width: 300px;
+}
+
+button {
+  background: #0084ff;
+  border: none;
+  border-radius: 9px;
+  margin:2px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #fff;
+
+  left: 50%;
+
+}
+
+#banner-message.alt {
+  background: #0084ff;
+  color: #fff;
+  margin-top: 40px;
+  width: 200px;
+}
+
+#banner-message.alt button {
+  background: #fff;
+  color: #000;
+}
+
+
+  </style> 
+<body>
+    <center>
+   
+
+    <div id="selectRoom">
+        <label for="name">Nome </label>
+        <input id="name" type="text" />
+        <div> &nbsp; </div>
+      
+      <div>  <label for="roomNumber">CANAL</label>
+        <input id="roomNumber" type="text" /></div>
+        
+       <div> <button id="joinViewer">Assistir</button> <button id="joinBroadcaster">Transmitir</button>     
+        </div>
+    </div>
+    </center>
+    <div id="consultingRoom" style="display:none">
+        <video autoplay controls muted></video>
+        <p id="broadcasterName"></p>
+        <ul id="viewers"></ul>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
