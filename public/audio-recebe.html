@@ -144,9 +144,30 @@ button {
     </center>
     <div id="consultingRoom" style="display:none">
         <video autoplay controls ></video>
-        <p id="broadcasterName"></p>
-        <ul id="viewers"></ul>
+                <button onclick="iniciarPIP()">PiP</button>
+   <div>       
+     <button value="Refresh Page" onClick="window.location.href=window.location.href" style="background-color:red">Reiniciar</button>
+       </div>
+
+        <p id="broadcasterName" style=" color: white; "></p>
+        <ul id="viewers" style=" color: white;"></ul>
     </div>
+
+<!--Faz pip no navegador, funciona bem para computadores 
+não roda em android ios não testado
+
+
+
+-->
+<script>
+async function iniciarPIP(){
+    const video = document.querySelector('#video');
+    await video.requestPictureInPicture();
+}
+
+</script>
+       
+    
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="client-audio.js"></script>
