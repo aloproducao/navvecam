@@ -37,6 +37,26 @@ transform: translateX(-40%);
   color: lightblue; 
 }
 
+
+    select {
+        -webkit-appearance: none;
+  margin-top: 30px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  border-radius: 40px;
+  font-size: 14px;
+  border: 3px solid #00B8FF;
+  color: #00B8FF;
+  background: none;
+  height: 40px;
+ 
+  margin: 0;
+  transition: 0.3s;
+  box-shadow: inset 0 0 0 none;
+  width: 20%;
+  }
+
+
     #name {
         -webkit-appearance: none;
   margin-top: 30px;
@@ -117,6 +137,7 @@ button {
     
         
  <div class="select is-info is-3">
+  
  <label for="roomNumber">CANAL</label>
             <select id="roomNumber" >
               <!-- 
@@ -153,10 +174,24 @@ button {
     <div id="consultingRoom" style="display:none">
         <video id=video autoplay controls muted></video>
        
-        <button onclick="iniciarPIP()">PiP</button>
-   <div>       
+       <div class="select">
+        <label for="videoSource"></label><select id="videoSource"></select>
+    </div>
+    
+        <div class="select">
+        <label for="audioSource"> </label><select id="audioSource"></select>
+    </div>
+
+    <div class="select">
+        <label for="audioOutput"></label><select id="audioOutput"></select>
+    </div>
+
+    
+   <div>    
+    <button onclick="iniciarPIP()">PiP</button>   
      <button value="Refresh Page" onClick="window.location.href=window.location.href" style="background-color:red">Reiniciar</button>
        </div>
+       
 
         <p id="broadcasterName" style=" color: white; "></p>
         <ul id="viewers" style=" color: white;"></ul>
